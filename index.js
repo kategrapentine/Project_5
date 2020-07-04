@@ -157,10 +157,10 @@ class Menu {
     addSpecies() {
         let name = prompt('Enter name for the new species listing:');
         this.animalSpecies.push(new Species(name));
-        let petName = prompt('What is the name of the animal?')
-        let breed = prompt('What is the breed of the animal?')
-        let age = prompt('What is the animals age in years?')
-        let sex = prompt('Is the animal male or female?')
+        let petName = prompt('What is the name of the animal?');
+        let breed = prompt('What is the breed of the animal?');
+        let age = prompt('What is the animals age in years?');
+        let sex = prompt('Is the animal male or female?');
         this.animalSpecies[this.animalSpecies.length - 1].pets.push(new Pet(petName, breed, age, sex));
     }
 
@@ -172,15 +172,16 @@ class Menu {
         }
         let index = prompt(`${speciesString}` + '\n' + 'Please enter the species index of the pet you wish to surrender:');
         if (index > -1 && index < this.animalSpecies.length) {
-            let name = prompt('What is the name of the animal?')
-            let breed = prompt('What is the breed of the animal?')
-            let age = prompt('What is the animals age')
-            let sex = prompt('Is the animal male or female?')
+            let name = prompt('What is the name of the animal?');
+            let breed = prompt('What is the breed of the animal?');
+            let age = prompt('What is the animals age');
+            let sex = prompt('Is the animal male or female?');
             this.animalSpecies[index].pets.push(new Pet(name, breed, age, sex));
         }   
     }
 
-//adoptPet removes a pet from the selected species
+//adoptPet removes a pet from the selected species array, then checks to see if the array is empty.
+//if the array is empty, it will delete that species automatically
     adoptPet(currentSpecies) {
         let index = prompt('Enter the index of the pet you want to adopt:');
         if (index > -1 && index < this.selectedSpecies.pets.length) {
